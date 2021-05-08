@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import ImageSlider from '../ImageSlider/ImageSlider';
+import Viewers from '../Viewers/Viewers';
 
 
 const HomePage =()=>{
     return(
         <Container>
             <ImageSlider/>
+            <Viewers/>
         </Container>
     )
 }
