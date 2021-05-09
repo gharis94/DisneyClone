@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ImageSlider from '../ImageSlider/ImageSlider';
+import Movies from '../Movies/Movies';
 import Viewers from '../Viewers/Viewers';
 
 
@@ -9,6 +10,7 @@ const HomePage =()=>{
         <Container>
             <ImageSlider/>
             <Viewers/>
+            <Movies/>
         </Container>
     )
 }

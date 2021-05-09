@@ -11,7 +11,7 @@ const Header=()=>{
                     <img alt='home' src='/images/home-icon.svg'/>
                     <span>Home</span>
                 </Option>
-                <Option to='/'>
+                <Option to='details'>
                     <img alt='home' src='/images/search-icon.svg'/>
                     <span>Search</span>
                 </Option>
