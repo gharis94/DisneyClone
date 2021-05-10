@@ -1,24 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
+import {selectMovies} from '../../redux/movieSlice';
+import {useSelector} from 'react-redux';
 
 
 const Movies =()=>{
+    const movies=useSelector(selectMovies);
+    
     return(
         <Container>
             <h4> Recommended for you</h4>
             <Content>
-                <Wrap>
-                    <img alt='' src='https://scontent.fkhi15-1.fna.fbcdn.net/v/t1.6435-9/122735881_4261243860572135_5576756425671548679_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeH9b_th2L4-h-EepS7oOzM7JRpTh-oUlNolGlOH6hSU2sY5Jvav-lUrSFEkSEKt1Nw4rGIhoa6iN2uyM6VakCpS&_nc_ohc=CPsw1wGoyCQAX_Vy6og&_nc_oc=AQn1oPTjEriWY880sy7ELq7ST5g_uPVa6Gud9pnQm3jWxp5KKNNRtPTQL7ZBP1s0cwg&_nc_ht=scontent.fkhi15-1.fna&oh=a4a2f5597261bef6d14ff510791aca14&oe=60BE48F1'/>
-                </Wrap>
-                <Wrap>
-                    <img alt='' src='https://scontent.fkhi15-1.fna.fbcdn.net/v/t1.6435-9/122735881_4261243860572135_5576756425671548679_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeH9b_th2L4-h-EepS7oOzM7JRpTh-oUlNolGlOH6hSU2sY5Jvav-lUrSFEkSEKt1Nw4rGIhoa6iN2uyM6VakCpS&_nc_ohc=CPsw1wGoyCQAX_Vy6og&_nc_oc=AQn1oPTjEriWY880sy7ELq7ST5g_uPVa6Gud9pnQm3jWxp5KKNNRtPTQL7ZBP1s0cwg&_nc_ht=scontent.fkhi15-1.fna&oh=a4a2f5597261bef6d14ff510791aca14&oe=60BE48F1'/>
-                </Wrap>
-                <Wrap>
-                    <img alt='' src='https://scontent.fkhi15-1.fna.fbcdn.net/v/t1.6435-9/122735881_4261243860572135_5576756425671548679_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeH9b_th2L4-h-EepS7oOzM7JRpTh-oUlNolGlOH6hSU2sY5Jvav-lUrSFEkSEKt1Nw4rGIhoa6iN2uyM6VakCpS&_nc_ohc=CPsw1wGoyCQAX_Vy6og&_nc_oc=AQn1oPTjEriWY880sy7ELq7ST5g_uPVa6Gud9pnQm3jWxp5KKNNRtPTQL7ZBP1s0cwg&_nc_ht=scontent.fkhi15-1.fna&oh=a4a2f5597261bef6d14ff510791aca14&oe=60BE48F1'/>
-                </Wrap>
-                <Wrap>
-                    <img alt='' src='https://scontent.fkhi15-1.fna.fbcdn.net/v/t1.6435-9/122735881_4261243860572135_5576756425671548679_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeH9b_th2L4-h-EepS7oOzM7JRpTh-oUlNolGlOH6hSU2sY5Jvav-lUrSFEkSEKt1Nw4rGIhoa6iN2uyM6VakCpS&_nc_ohc=CPsw1wGoyCQAX_Vy6og&_nc_oc=AQn1oPTjEriWY880sy7ELq7ST5g_uPVa6Gud9pnQm3jWxp5KKNNRtPTQL7ZBP1s0cwg&_nc_ht=scontent.fkhi15-1.fna&oh=a4a2f5597261bef6d14ff510791aca14&oe=60BE48F1'/>
-                </Wrap>
+                
+                {movies && 
+                    movies.map((movie)=>(
+                        <Wrap key={movie.id}>
+                            <img alt='' src={movie.cardImg}/>
+                        </Wrap>
+                    ))}
+                    
 
             </Content>
 
@@ -40,7 +40,6 @@ const Content=styled.div `
 `
 
 const Wrap=styled.div `
-    padding:0 26px 0;
     border-radius:10px;
     cursor:pointer;
     overflow:hidden;
